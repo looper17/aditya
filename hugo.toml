@@ -1,0 +1,14 @@
+baseURL = 'https://www.adityanarvekar.com/'
+languageCode = 'en-us'
+title = 'Aditya Narvekar'
+theme = 'apple-minimal'
+
+[params]
+  description = 'Professional Portfolio'
+  author = 'Aditya Narvekar'
+  # google_analytics_id = 'G-XXXXXXXXXX'  # Uncomment and add your GA4 ID
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

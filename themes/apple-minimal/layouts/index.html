@@ -1,0 +1,114 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section id="hero" class="section hero-section">
+    <div class="container">
+        <h1 class="hero-title fade-in">{{ .Site.Title }}</h1>
+        <p class="hero-subtitle fade-in-delay-1">{{ .Params.professional_title | default "Professional Title" }}</p>
+        <p class="hero-intro fade-in-delay-2">{{ .Params.intro | default "One-line introduction about what you do" }}</p>
+        <div class="scroll-indicator fade-in-delay-3">
+            <span class="scroll-text">Scroll to explore</span>
+            <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about-section section-peek">
+    <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+            {{ .Content }}
+        </div>
+    </div>
+</section>
+
+<!-- Work Section -->
+<section id="work" class="section work-section">
+    <div class="container">
+        <h2 class="section-title">Work</h2>
+        <div class="work-grid">
+            {{ range where .Site.RegularPages "Section" "work" }}
+            <div class="work-card">
+                {{ if .Params.image }}
+                <div class="work-image">
+                    <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+                </div>
+                {{ end }}
+                <h3 class="work-title">{{ .Title }}</h3>
+                <p class="work-company">{{ .Params.company }}</p>
+                <p class="work-description">{{ .Params.description }}</p>
+                {{ if .Params.pdf }}
+                <a href="{{ .Params.pdf | relURL }}" class="work-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Writing Section -->
+<section id="writing" class="section writing-section">
+    <div class="container">
+        <h2 class="section-title">Writing</h2>
+        <div class="writing-grid">
+            {{ range where .Site.RegularPages "Section" "writing" }}
+            <div class="writing-card">
+                <h3 class="writing-title">
+                    <a href="{{ .Params.external_url }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
+                </h3>
+                <p class="writing-publication">{{ .Params.publication }}</p>
+                <p class="writing-date">{{ .Date.Format "January 2, 2006" }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Resume Section -->
+<section id="resume" class="section resume-section">
+    <div class="container">
+        <h2 class="section-title">Resume</h2>
+        <div class="resume-content">
+            {{ .Params.resume_content | markdownify }}
+        </div>
+        {{ if .Params.resume_pdf }}
+        <div class="resume-download">
+            <a href="{{ .Params.resume_pdf | relURL }}" class="btn-download" download>Download PDF</a>
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact-section">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-links">
+            {{ if .Params.email }}
+            <a href="mailto:{{ .Params.email }}" class="contact-link">
+                <span>Email</span>
+            </a>
+            {{ end }}
+            {{ if .Params.linkedin }}
+            <a href="{{ .Params.linkedin }}" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span>LinkedIn</span>
+            </a>
+            {{ end }}
+            {{ if .Params.github }}
+            <a href="{{ .Params.github }}" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span>GitHub</span>
+            </a>
+            {{ end }}
+            {{ if .Params.twitter }}
+            <a href="{{ .Params.twitter }}" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span>Twitter</span>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ end }}
