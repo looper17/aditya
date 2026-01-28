@@ -6,7 +6,10 @@
         <h1 class="hero-title fade-in">{{ .Site.Title }}</h1>
         <p class="hero-subtitle fade-in-delay-1">{{ .Params.professional_title | default "Professional Title" }}</p>
         <p class="hero-intro fade-in-delay-2">{{ .Params.intro | default "One-line introduction about what you do" }}</p>
-        <div class="scroll-indicator fade-in-delay-3">
+        <div class="hero-image fade-in-delay-3">
+            <img src="/images/Action Figure.png" alt="Action Figure" class="action-figure">
+        </div>
+        <div class="scroll-indicator fade-in-delay-4">
             <span class="scroll-text">Scroll to explore</span>
             <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

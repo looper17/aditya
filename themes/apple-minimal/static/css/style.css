@@ -158,7 +158,25 @@ body {
   font-size: 21px;
   color: var(--text-secondary);
   max-width: 600px;
-  margin: 0 auto 80px;
+  margin: 0 auto 40px;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto 80px;
+}
+
+.action-figure {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.action-figure:hover {
+  transform: scale(1.05);
 }
 
 .scroll-indicator {
