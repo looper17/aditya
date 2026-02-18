@@ -5,7 +5,7 @@ intro: "I talk to customers, instrument the funnel, tighten the story, repeat."
 email: "narvekar121@gmail.com"
 linkedin: "https://www.linkedin.com/in/aditya-ai-analyst/"
 github: "https://github.com/looper17"
-resume_pdf: "/work/resume-aditya-narvekar.pdf"
+resume_pdf: "work/resume-aditya-narvekar.pdf"
 resume_content: |
   ### Experience
 
